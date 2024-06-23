@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import { ContactModel, TContact } from "./contact.interface";
-import { string } from "zod";
+
 
 const contactSchema = new Schema<TContact, ContactModel>({
     name: {
@@ -8,7 +8,7 @@ const contactSchema = new Schema<TContact, ContactModel>({
         required: true
     },
     email: {
-        type: string,
+        type: String,
         unique: true
     },
     address: {
@@ -21,6 +21,10 @@ const contactSchema = new Schema<TContact, ContactModel>({
     },
     profilePicture: {
         type: String
+    },
+    isDeleted:{
+        type:Boolean,
+        default:false
     }
 }, {
     timestamps: true

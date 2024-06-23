@@ -1,10 +1,11 @@
 import express from 'express';
+import { ContactRoutes } from '../modules/contact/contact.route';
 
 const router=express.Router();
 const moduleRoutes=[
     {
-        path:"/contacts",
-        route:"l"
+        path:"/",
+        route:ContactRoutes
     },
 ]
 

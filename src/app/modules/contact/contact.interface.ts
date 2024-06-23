@@ -6,6 +6,7 @@ export type TContact={
   phoneNumber:number;
   address:string;
   profilePicture:string;
+  isDeleted:boolean;
 } 
 
 export interface ContactModel extends Model<TContact> {
