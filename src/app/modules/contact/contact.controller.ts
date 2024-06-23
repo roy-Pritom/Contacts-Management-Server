@@ -25,8 +25,21 @@ const getAllContacts=catchAsync(async(req,res)=>{
     })
 })
 
+// get contact by id
+const getSingleContact=catchAsync(async(req,res)=>{
+  const {id}=req.params;
+    const result=await ContactServices.getContactByIdFromDb(id);
+    sendResponse(res,{
+      success:true,
+      statusCode:httpStatus.OK,
+      message:"Contact retrieve successfully",
+      data:result
+    })
+})
+
 export const ContactControllers={
     createContact,
     getAllContacts,
+    getSingleContact
 
 }
